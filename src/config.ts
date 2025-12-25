@@ -1,9 +1,9 @@
 export const SITE = {
   website: "https://chaoticrants.xyz/", // replace this with your deployed domain
-  author: "Chaotic Rant",
-  profile: "https://satnaing.dev/",
+  author: "chaoticrants",
+  profile: "https://chaoticrants.xyz/about/",
   desc: "A chaotic ranting place.",
-  title: "Chaotic Rants",
+  title: "chaoticrants",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
