@@ -23,8 +23,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 <Layout>
   <Header />
   <main id="main-content" data-layout="index">
-    <section id="hero" class="pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
+    <section id="hero" class="mt-20 pb-6">
+      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-4xl">
         now that you are here, enjoy some yellings into the clouds.
       </h1>
       <!-- <a
@@ -45,26 +45,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
       <p> life doesn't make sense to me.</p> 
       <p> 100 different tabs open.</p> 
       <p> maybe sorting is needed.</p>
-      <p class="mt-2">
-        Read my blog 
-        <LinkButton
-          class="underline decoration-dashed underline-offset-4 hover:text-accent"
-          href="/posts/"
-        >POSTS</LinkButton>
-        for more chaotic thoughts.
-      </p>
-      {
-        // only display if at least one social link is enabled
-        SOCIALS.length > 0 && (
-          <div class="mt-4 flex flex-col sm:flex-row sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">Social Links:</div>
-            <Socials />
-          </div>
-        )
-      }
     </section>
-
-    <Hr />
+    <!-- <Hr /> -->
 
     {
       featuredPosts.length > 0 && (

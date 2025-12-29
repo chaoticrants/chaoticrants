@@ -1,9 +1,9 @@
 ---
 author: chaoticrants
-pubDatetime: 2022-09-23T15:22:00Z
-modDatetime: 2025-06-13T16:52:45.934Z
+pubDatetime: 2025-12-28T15:29:18.540Z
+modDatetime: 2025-12-28T15:29:18.540Z
 title: first post
-slug: chaoticrants
+slug: chaoticrant
 featured: true
 draft: false
 tags:
