@@ -1,0 +1,569 @@
+---
+
+---
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chaoticrants | restaurants</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.min.js"></script>
+    <style>
+        body {
+            background: #000;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        
+        .main-container {
+            background: #000;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            margin: 20px auto;
+        }
+
+        .header-section {
+            background: #000;
+            color: #ffffff;
+            padding: 30px;
+            border-radius: 10px 10px 0 0;
+            margin: 5px;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            margin: 0;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #ffffff;
+        }
+
+        .header-section p {
+            margin: 10px 0 0 0;
+            opacity: 0.85;
+            color: #e0e0e0;
+        }
+
+        .content-section {
+            padding: 30px;
+        }
+
+        .upload-card {
+            border-left: 4px solid #ffffff;
+            background: #000000;
+        }
+
+        .filters-card {
+            border-left: 4px solid #ffffff;
+            background: #000000;
+        }
+
+        .table-card {
+            border-left: 4px solid #ffffff;
+            background: #000000;
+        }
+
+        .file-input-wrapper input[type=file] {
+            display: none;
+        }
+
+        .btn-file {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 1px solid #555555;
+        }
+
+        .btn-file:hover {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .file-name {
+            margin-left: 15px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        .stat-card {
+            background: #000000;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #444444;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+            color: #ffffff;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table thead {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .table thead th {
+            color: #ffffff;
+            border-color: #444444;
+            background: #000000;
+        }
+
+        .table tbody tr:hover {
+            background: #f0f0f0;
+        }
+
+        .table tbody tr:nth-child(even) {
+            background: #000000;
+        }
+
+        .table tbody td {
+            color: #ffffff;
+            border-color: #ffffff;
+            background-color: #000000;
+        }
+
+        .spinner-custom {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #cccccc;
+            border-top: 3px solid #1a1a1a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .alert-custom {
+            border-left: 4px solid;
+        }
+
+        #filtersGrid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+
+        .filter-item {
+            flex: 0 1 auto;
+            min-width: 180px;
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        .hidden-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid-lg main-container">
+        <!-- Header -->
+        <div class="header-section">
+            <h1><i class="bi bi-bar-chart"></i>  restaurants</h1>
+            <p>Upload and filter your data with ease</p>
+        </div>
+
+        <!-- Content -->
+        <div class="content-section">
+            <!-- Error Message -->
+            <div class="alert alert-danger alert-custom hidden-section" id="errorMessage" role="alert">
+                <i class="bi bi-exclamation-circle"></i> <span id="errorText"></span>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="card upload-card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title text-light"><i class="bi bi-cloud-upload"></i> Upload File</h5>
+                    <p class="card-text text-light">Supported formats: Excel (.xlsx, .xls) and CSV (.csv)</p>
+                    <div class="file-input-wrapper">
+                        <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
+                        <label for="fileInput" class="btn-file">
+                            <i class="bi bi-folder-open"></i> Choose File
+                        </label>
+                    </div>
+                    <span class="file-name" id="fileName"></span>
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div class="alert alert-info hidden-section" id="loading" role="alert">
+                <div class="spinner-custom"></div>
+                <span>Processing file...</span>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="card filters-card mb-4 hidden-section" id="filtersSection">
+                <div class="card-body">
+                    <h5 class="card-title text-light"><i class="bi bi-funnel"></i> Filters</h5>
+                    <div id="filtersGrid"></div>
+                    <div class="mt-3 d-flex gap-2">
+                        <button class="btn btn-secondary btn-sm" onclick="resetFilters()">
+                            <i class="bi bi-arrow-counterclockwise"></i> Reset Filters
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="clearAllFilters()">
+                            <i class="bi bi-x-circle"></i> Clear All
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics -->
+            <div class="row mb-4" id="stats"></div>
+
+            <!-- Table Section -->
+            <div class="card table-card hidden-section" id="tableSection">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="card-title mb-0 text-light"><i class="bi bi-table"></i> Restuarants</h5>
+                        <small class="text-light">
+                            Showing <span id="displayCount">0</span> of <span id="totalCount">0</span> records
+                        </small>
+                    </div>
+                    <div class="table-wrapper">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr id="headerRow"></tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty Message -->
+            <div class="alert alert-info alert-custom hidden-section text-center" id="emptyMessage" role="alert">
+                <i class="bi bi-inbox"></i> No records found. Try adjusting your filters or upload a file.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let originalData = [];
+        let filteredData = [];
+        const filterValues = {};
+
+        document.getElementById('fileInput').addEventListener('change', handleFileUpload);
+
+        // Auto-load CSV file on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            autoLoadCSV();
+        });
+
+        function autoLoadCSV() {
+            fetch('../../src/assets/csv/restaurants.csv')
+                .then(response => response.text())
+                .then(csv => {
+                    document.getElementById('fileName').textContent = 'restaurants.csv (Auto-loaded)';
+                    const data = parseCSV(csv);
+                    originalData = data;
+                    
+                    if (originalData.length === 0) {
+                        throw new Error('The file is empty');
+                    }
+
+                    filteredData = [...originalData];
+                    
+                    initializeFilters();
+                    renderTable(filteredData);
+                    document.getElementById('filtersSection').classList.add('active');
+                    document.getElementById('tableSection').classList.add('active');
+                    document.getElementById('emptyMessage').classList.remove('active');
+                })
+                .catch(error => {
+                    console.log('Auto-load skipped - CSV file not found. Upload manually or check file path.');
+                });
+        }
+
+        function handleFileUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            document.getElementById('fileName').textContent = file.name;
+            document.getElementById('loading').classList.add('active');
+            document.getElementById('errorMessage').classList.remove('active');
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    let data = [];
+                    
+                    if (file.name.endsWith('.csv')) {
+                        // Handle CSV file
+                        const csv = e.target.result;
+                        data = parseCSV(csv);
+                    } else {
+                        // Handle Excel file
+                        const fileData = new Uint8Array(e.target.result);
+                        const workbook = XLSX.read(fileData, { type: 'array' });
+                        const sheetName = workbook.SheetNames[0];
+                        const sheet = workbook.Sheets[sheetName];
+                        data = XLSX.utils.sheet_to_json(sheet);
+                    }
+                    
+                    originalData = data;
+                    
+                    if (originalData.length === 0) {
+                        throw new Error('The file is empty');
+                    }
+
+                    filteredData = [...originalData];
+                    
+                    initializeFilters();
+                    renderTable(filteredData);
+                    document.getElementById('filtersSection').classList.add('active');
+                    document.getElementById('tableSection').classList.add('active');
+                    document.getElementById('emptyMessage').classList.remove('active');
+
+                } catch (error) {
+                    showError('Error reading file: ' + error.message);
+                } finally {
+                    document.getElementById('loading').classList.remove('active');
+                }
+            };
+
+            if (file.name.endsWith('.csv')) {
+                reader.readAsText(file);
+            } else {
+                reader.readAsArrayBuffer(file);
+            }
+        }
+
+        function parseCSV(csv) {
+            const lines = csv.trim().split('\n');
+            if (lines.length === 0) return [];
+
+            // Parse header
+            const headerLine = lines[0];
+            const headers = headerLine.split(',').map(function(h) { return h.trim(); });
+            
+            // Parse rows
+            const results = [];
+            for (let i = 1; i < lines.length; i++) {
+                const line = lines[i].trim();
+                if (line === '') continue;
+                
+                const values = line.split(',');
+                const row = {};
+                
+                for (let j = 0; j < headers.length; j++) {
+                    const val = values[j] ? values[j].trim() : '';
+                    const numVal = parseFloat(val);
+                    row[headers[j]] = isNaN(numVal) ? val : numVal;
+                }
+                
+                results.push(row);
+            }
+            
+            return results;
+        }
+
+        function initializeFilters() {
+            if (originalData.length === 0) return;
+
+            const columns = Object.keys(originalData[0]);
+            const filtersGrid = document.getElementById('filtersGrid');
+            filtersGrid.innerHTML = '';
+
+            columns.forEach(column => {
+                const values = [...new Set(originalData.map(row => row[column]))].filter(v => v !== undefined && v !== null && v !== '');
+                
+                let filterHTML = '';
+                if (values.length > 0 && values.length <= 20) {
+                    // Dropdown for categorical data
+                    filterHTML = `
+                        <div class="filter-item">
+                            <label class="filter-label">${column}</label>
+                            <select class="form-select form-select-sm" onchange="applyFilters()">
+                                <option value="">All ${column}</option>
+                                ${values.sort().map(v => `<option value="${v}">${v}</option>`).join('')}
+                            </select>
+                        </div>
+                    `;
+                } else if (values.length > 20) {
+                    // Text input for large datasets
+                    filterHTML = `
+                        <div class="filter-item">
+                            <label class="filter-label">${column} (Search)</label>
+                            <input type="text" class="form-control form-control-sm" placeholder="Search..." onkeyup="applyFilters()" />
+                        </div>
+                    `;
+                } else {
+                    // Skip empty columns
+                    return;
+                }
+
+                const filterElement = document.createElement('div');
+                filterElement.innerHTML = filterHTML;
+                const input = filterElement.querySelector('select, input');
+                input.dataset.column = column;
+                filtersGrid.appendChild(filterElement);
+            });
+        }
+
+        function applyFilters() {
+            const filterInputs = document.querySelectorAll('.form-select, .form-control');
+            const newFilterValues = {};
+
+            filterInputs.forEach(input => {
+                const column = input.dataset.column;
+                const value = input.value.trim();
+                if (value) {
+                    newFilterValues[column] = value.toLowerCase();
+                }
+            });
+
+            Object.keys(filterValues).forEach(key => delete filterValues[key]);
+            Object.assign(filterValues, newFilterValues);
+
+            filteredData = originalData.filter(row => {
+                return Object.keys(filterValues).every(column => {
+                    const cellValue = String(row[column] || '').toLowerCase();
+                    const filterValue = filterValues[column];
+                    return cellValue.includes(filterValue);
+                });
+            });
+
+            renderTable(filteredData);
+        }
+
+        function renderTable(data) {
+            if (data.length === 0) {
+                document.getElementById('tableBody').innerHTML = '';
+                document.getElementById('emptyMessage').classList.add('active');
+                document.getElementById('stats').innerHTML = '';
+                document.getElementById('displayCount').textContent = '0';
+                document.getElementById('totalCount').textContent = originalData.length;
+                return;
+            }
+
+            document.getElementById('emptyMessage').classList.remove('active');
+            
+            const columns = Object.keys(data[0]);
+            
+            // Render header
+            const headerRow = document.getElementById('headerRow');
+            headerRow.innerHTML = columns.map(col => `<th>${col}</th>`).join('');
+
+            // Render body
+            const tableBody = document.getElementById('tableBody');
+            tableBody.innerHTML = data.map(row => {
+                return `<tr>${columns.map(col => `<td>${row[col] || ''}</td>`).join('')}</tr>`;
+            }).join('');
+
+            document.getElementById('displayCount').textContent = data.length;
+            document.getElementById('totalCount').textContent = originalData.length;
+
+            // Update stats
+            updateStats(columns, data);
+        }
+
+        function updateStats(columns, data) {
+            const statsDiv = document.getElementById('stats');
+            statsDiv.innerHTML = '';
+
+            // Show count stat
+            const countCard = document.createElement('div');
+            countCard.className = 'col-md-6 col-lg-3 mb-3';
+            countCard.innerHTML = `
+                <div class="stat-card">
+                    <div class="stat-number">${data.length}</div>
+                    <div class="stat-label">Records</div>
+                </div>
+            `;
+            statsDiv.appendChild(countCard);
+
+            // Show numeric columns stats if available
+            columns.slice(0, 3).forEach(col => {
+                const values = data.map(row => parseFloat(row[col])).filter(v => !isNaN(v));
+                if (values.length > 0) {
+                    const avg = (values.reduce((a, b) => a + b, 0) / values.length).toFixed(2);
+                    const card = document.createElement('div');
+                    card.className = 'col-md-6 col-lg-3 mb-3';
+                    card.innerHTML = `
+                        <div class="stat-card">
+                            <div class="stat-number">${avg}</div>
+                            <div class="stat-label">Avg ${col}</div>
+                        </div>
+                    `;
+                    statsDiv.appendChild(card);
+                }
+            });
+        }
+
+        function resetFilters() {
+            document.querySelectorAll('.form-select, .form-control').forEach(input => {
+                input.value = '';
+            });
+            Object.keys(filterValues).forEach(key => delete filterValues[key]);
+            filteredData = [...originalData];
+            renderTable(filteredData);
+        }
+
+        function clearAllFilters() {
+            document.getElementById('fileInput').value = '';
+            document.getElementById('fileName').textContent = '';
+            document.getElementById('filtersSection').classList.remove('active');
+            document.getElementById('tableSection').classList.remove('active');
+            document.getElementById('filtersGrid').innerHTML = '';
+            document.getElementById('headerRow').innerHTML = '';
+            document.getElementById('tableBody').innerHTML = '';
+            document.getElementById('stats').innerHTML = '';
+            originalData = [];
+            filteredData = [];
+            Object.keys(filterValues).forEach(key => delete filterValues[key]);
+        }
+
+        function showError(message) {
+            const errorDiv = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+            errorText.textContent = message;
+            errorDiv.classList.add('active');
+        }
+    </script>
+</body>
+</html>

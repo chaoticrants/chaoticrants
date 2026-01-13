@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="benches01.png">
+  <title>parkingassinhyd</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    #map {
+      width: 100%;
+      height: 100%;
+    }
+
+    .montserrat-500 {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 500;
+      font-style: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <span class="navbar-brand mb-0 h1 montserrat-500">parkingassinhyd</span>
+
+      <div class="badge text-bg-primary montserrat-500">
+        benches documented: <span id="no-of-benches" class="h4"></span>
+      </div>
+    </div>
+  </nav>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+  <script>
+    // Center on Hyderabad
+    const map = L.map('map').setView([17.49, 78.38], 16);
+    const benchIcon = L.icon({
+      //iconUrl: 'bench-com.svg',
+      iconUrl: '../../src/assets/images/benches01.png',
+      iconSize: [34, 36],        // adjust as needed
+      iconAnchor: [16, 16],      // center the icon
+      popupAnchor: [0, -16]      // popup above icon
+    });
+
+    // Add OSM tile layer
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; CartoDB &copy; OpenStreetMap contributors',
+      maxZoom: 21
+    }).addTo(map);
+
+    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //   maxZoom: 19,
+    //   attribution: '&copy; OpenStreetMap contributors'
+    // }).addTo(map);
+
+    // // Example marker
+    // L.marker([17.3850, 78.4867])
+    //   .addTo(map)
+    //   .bindPopup('<b>Hyderabad</b><br>This is a marker.')
+    //   .openPopup();
+    fetch('../../src/assets/geo-jsons/map.geojson')
+      .then(response => response.json())
+      .then(data => {
+      console.log({data})
+        document.getElementById("no-of-benches").innerHTML = data.features.length;
+        L.geoJSON(data, {
+          pointToLayer: function (feature, latlng) {
+            return L.marker(latlng, { icon: benchIcon });
+          },
+          onEachFeature: function (feature, layer) {
+            if (feature.properties && feature.properties.name) {
+              layer.bindPopup(feature.properties.name);
+            }
+          }
+        }).addTo(map);
+      });
+  </script>
+
+</body>
+
+</html>

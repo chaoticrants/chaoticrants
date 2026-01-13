@@ -81,3 +81,14 @@ export const SHARE_LINKS: Social[] = [
     icon: IconMail,
   },
 ] as const;
+
+export const OTHER_PAGES = [
+  {
+    name: "Parking Ass in Hyderabad",
+    href: "/otherpages/parkingassinhyd",
+  },
+  {
+    name: "Burrows",
+    href: "/otherpages/burrows",
+  },
+];

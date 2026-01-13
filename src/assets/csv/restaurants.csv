@@ -1,0 +1,297 @@
+Name,Area,Direction,Type,CostPerPerson,Cuisine,Rating
+The Spice Garden,Downtown,North,Veg,350,Indian,4.5
+Burger Bliss,Downtown,South,Non-Veg,250,American,4.0
+Dragon Wok,Uptown,East,Both,400,Chinese,4.3
+Pasta Paradise,Midtown,West,Veg,450,Italian,4.7
+Taj Express,Downtown,East,Both,380,Indian,4.6
+Tokyo Kitchen,Uptown,North,Both,550,Japanese,4.8
+Veggie Delight,Midtown,South,Veg,300,Indian,4.4
+BBQ Smokehouse,Downtown,North,Non-Veg,500,American,4.2
+Falafel House,Uptown,South,Veg,280,Middle Eastern,4.1
+Pho King Good,Midtown,East,Both,320,Vietnamese,4.5
+Grilled Delights,Downtown,West,Non-Veg,420,Mediterranean,4.4
+Sushi Supreme,Uptown,West,Both,600,Japanese,4.9
+Green Plate,Midtown,North,Veg,290,Continental,4.3
+Tandoori Nights,Downtown,East,Non-Veg,400,Indian,4.5
+Thai Orchid,Uptown,East,Both,380,Thai,4.6
+Chai House,Midtown,West,Veg,320,Indian,4.2
+Bistro Cafe,Downtown,North,Veg,380,French,4.7
+Spicy Dreams,Uptown,South,Non-Veg,370,Indian,4.4
+Korean BBQ House,Midtown,East,Non-Veg,450,Korean,4.6
+Pizza Palazzo,Downtown,West,Veg,280,Italian,4.3
+Vegan Bliss,Uptown,North,Veg,310,Continental,4.5
+Meat Lovers Paradise,Downtown,East,Non-Veg,480,American,4.4
+Dumpling King,Midtown,South,Both,290,Chinese,4.4
+Steakhouse Elite,Uptown,West,Non-Veg,650,American,4.8
+Curry Express,Downtown,North,Both,340,Indian,4.5
+Noodle Nation,Midtown,East,Both,300,Chinese,4.3
+Kebab House,Uptown,South,Both,320,Middle Eastern,4.2
+Sizzling Pan,Downtown,South,Both,400,Asian,4.4
+Lakeside Bistro,Midtown,West,Veg,420,Continental,4.6
+Spice Route,Uptown,East,Both,380,Indian,4.5
+Fish & Chips,Downtown,East,Non-Veg,250,British,4.1
+Rice Bowl,Midtown,North,Both,280,Asian,4.3
+Vegan Kitchen,Uptown,West,Veg,300,Continental,4.4
+Meat Grill Station,Downtown,West,Non-Veg,500,American,4.5
+Nori Sushi,Midtown,South,Both,480,Japanese,4.7
+Tacos Fiesta,Uptown,North,Both,220,Mexican,4.2
+Biryani Palace,Downtown,North,Both,370,Indian,4.6
+Pasta Mama,Midtown,East,Veg,340,Italian,4.4
+Pork House,Uptown,South,Non-Veg,420,Asian,4.3
+Cafe Aroma,Downtown,South,Veg,280,Continental,4.4
+Dragon Bowl,Midtown,West,Both,300,Chinese,4.2
+Thai Garden,Uptown,East,Both,350,Thai,4.5
+Chicken Paradise,Downtown,East,Non-Veg,290,American,4.2
+Spice Master,Midtown,North,Both,380,Indian,4.6
+Seafood Delights,Uptown,West,Non-Veg,550,Seafood,4.7
+Veg Delight,Downtown,West,Veg,290,Continental,4.3
+Mutton House,Midtown,South,Non-Veg,400,Indian,4.4
+Ramen House,Uptown,North,Both,320,Japanese,4.3
+Hummus & More,Downtown,North,Veg,260,Middle Eastern,4.1
+Dim Sum Palace,Midtown,East,Both,350,Chinese,4.5
+Fast Food King,Uptown,South,Non-Veg,200,American,3.8
+Pure Veg,Downtown,South,Veg,280,Indian,4.2
+Meat & Flame,Midtown,West,Non-Veg,480,American,4.5
+Wonton Express,Uptown,East,Both,310,Chinese,4.2
+Fries & Pie,Downtown,East,Non-Veg,240,American,3.9
+Vegetarian Paradise,Midtown,North,Veg,320,Continental,4.4
+Kebab King,Uptown,West,Both,350,Middle Eastern,4.3
+Fusion Delight,Downtown,West,Both,420,Asian,4.5
+Soy Joy,Midtown,South,Veg,280,Asian,4.2
+Rice Palace,Uptown,North,Both,330,Indian,4.4
+Pasta Place,Downtown,North,Veg,360,Italian,4.5
+Chicken Wings,Midtown,East,Non-Veg,300,American,4.1
+Thai Express,Uptown,South,Both,340,Thai,4.3
+Samosa Kitchen,Downtown,South,Both,250,Indian,4.0
+Dumpling House,Midtown,West,Both,320,Chinese,4.3
+Steak & Salad,Uptown,East,Non-Veg,520,American,4.6
+Curry Kitchen,Downtown,East,Both,360,Indian,4.5
+Sushi Ninja,Midtown,North,Both,490,Japanese,4.6
+Vegetable Garden,Uptown,West,Veg,310,Continental,4.4
+Beef House,Downtown,West,Non-Veg,510,American,4.5
+Fried Rice Company,Midtown,South,Both,280,Chinese,4.2
+Wrap Station,Uptown,North,Both,260,Mediterranean,4.1
+Tandoor House,Downtown,North,Non-Veg,420,Indian,4.5
+Ramen King,Midtown,East,Both,330,Japanese,4.4
+Pita Palace,Uptown,South,Veg,290,Middle Eastern,4.2
+Chicken Tikka,Downtown,South,Non-Veg,380,Indian,4.4
+Noodle Bar,Midtown,West,Both,300,Chinese,4.2
+Grilled Cheese,Uptown,East,Veg,200,American,3.9
+Biryani Kitchen,Downtown,East,Both,380,Indian,4.5
+Thai Kitchen,Midtown,North,Both,350,Thai,4.4
+Vegan Express,Uptown,West,Veg,290,Continental,4.3
+Meat Shack,Downtown,West,Non-Veg,400,American,4.2
+Curry Bowl,Midtown,South,Both,340,Indian,4.4
+Dumpling Dragon,Uptown,North,Both,310,Chinese,4.3
+Sushi Roll,Downtown,North,Both,470,Japanese,4.6
+Vegetable Paradise,Midtown,East,Veg,300,Continental,4.3
+BBQ Pit,Uptown,South,Non-Veg,480,American,4.4
+Pho House,Downtown,South,Both,290,Vietnamese,4.2
+Rice Bowl King,Midtown,West,Both,310,Asian,4.3
+Kebab House King,Uptown,East,Both,360,Middle Eastern,4.2
+Pasta Palace,Downtown,East,Veg,370,Italian,4.4
+Chicken King,Midtown,North,Non-Veg,320,American,4.2
+Thai Palace,Uptown,West,Both,360,Thai,4.4
+Spice House,Downtown,West,Both,370,Indian,4.5
+Soy Express,Midtown,South,Veg,270,Asian,4.1
+Meat Paradise,Uptown,North,Non-Veg,490,American,4.5
+Dumpling King,Downtown,North,Both,310,Chinese,4.2
+Sushi Spot,Midtown,East,Both,460,Japanese,4.6
+Veg Express,Uptown,South,Veg,280,Continental,4.2
+Kebab Express,Downtown,South,Both,330,Middle Eastern,4.1
+Pasta House,Midtown,West,Veg,360,Italian,4.3
+Chicken House,Uptown,East,Non-Veg,310,American,4.1
+Thai Spot,Downtown,East,Both,340,Thai,4.3
+Spice Kitchen,Midtown,North,Both,360,Indian,4.4
+Rice Express,Uptown,West,Both,300,Asian,4.2
+Meat House,Downtown,West,Non-Veg,450,American,4.3
+Dumpling Spot,Midtown,South,Both,300,Chinese,4.2
+Sushi House,Uptown,North,Both,480,Japanese,4.5
+Veg House,Downtown,North,Veg,290,Continental,4.2
+Kebab Spot,Midtown,East,Both,340,Middle Eastern,4.0
+Pasta Express,Uptown,South,Veg,350,Italian,4.3
+Chicken Spot,Downtown,South,Non-Veg,300,American,4.0
+Thai House,Midtown,West,Both,330,Thai,4.2
+Spice Spot,Uptown,East,Both,350,Indian,4.3
+Rice House,Downtown,East,Both,290,Asian,4.1
+Meat Spot,Midtown,North,Non-Veg,440,American,4.2
+Dumpling Express,Uptown,West,Both,290,Chinese,4.1
+Sushi Express,Downtown,West,Both,450,Japanese,4.5
+Veg Spot,Midtown,South,Veg,280,Continental,4.1
+Kebab Kitchen,Uptown,North,Both,330,Middle Eastern,3.9
+Pasta Spot,Downtown,North,Veg,340,Italian,4.2
+Chicken Kitchen,Midtown,East,Non-Veg,290,American,3.9
+Thai Kitchen,Uptown,South,Both,320,Thai,4.1
+Spice Express,Downtown,South,Both,340,Indian,4.2
+Rice Kitchen,Midtown,West,Both,280,Asian,4.0
+Meat Kitchen,Uptown,East,Non-Veg,430,American,4.1
+Dumpling Kitchen,Downtown,East,Both,280,Chinese,4.0
+Sushi Kitchen,Midtown,North,Both,470,Japanese,4.4
+Veg Kitchen,Uptown,West,Veg,270,Continental,4.0
+Kebab Express,Downtown,West,Both,320,Middle Eastern,3.8
+Pasta Kitchen,Midtown,South,Veg,330,Italian,4.1
+Chicken Express,Uptown,North,Non-Veg,280,American,3.8
+Thai Express,Downtown,North,Both,310,Thai,4.0
+Spice House,Midtown,East,Both,330,Indian,4.1
+Rice Express,Uptown,South,Both,270,Asian,3.9
+Meat Express,Downtown,South,Non-Veg,420,American,4.0
+Dumpling Spot,Midtown,West,Both,270,Chinese,3.9
+Sushi Spot,Uptown,East,Both,440,Japanese,4.3
+Veg Express,Downtown,East,Veg,260,Continental,3.9
+Kebab House,Midtown,North,Both,310,Middle Eastern,3.7
+Pasta Express,Uptown,West,Veg,320,Italian,4.0
+Chicken Spot,Downtown,West,Non-Veg,270,American,3.7
+Thai Spot,Midtown,South,Both,300,Thai,3.9
+Spice Spot,Uptown,North,Both,320,Indian,4.0
+Rice Spot,Downtown,North,Both,260,Asian,3.8
+Meat Spot,Midtown,East,Non-Veg,410,American,3.9
+Dumpling House,Uptown,South,Both,260,Chinese,3.8
+Sushi House,Downtown,South,Both,430,Japanese,4.2
+Veg House,Midtown,West,Veg,250,Continental,3.8
+Kebab House,Uptown,East,Both,300,Middle Eastern,3.6
+Pasta House,Downtown,East,Veg,310,Italian,3.9
+Chicken House,Midtown,North,Non-Veg,260,American,3.6
+Thai House,Uptown,West,Both,290,Thai,3.8
+Spice House,Downtown,West,Both,310,Indian,3.9
+Rice House,Midtown,South,Both,250,Asian,3.7
+Meat House,Uptown,North,Non-Veg,400,American,3.8
+Dumpling Cafe,Downtown,North,Both,250,Chinese,3.7
+Sushi Cafe,Midtown,East,Both,420,Japanese,4.1
+Veg Cafe,Uptown,South,Veg,240,Continental,3.7
+Kebab Cafe,Downtown,South,Both,290,Middle Eastern,3.5
+Pasta Cafe,Midtown,West,Veg,300,Italian,3.8
+Chicken Cafe,Uptown,East,Non-Veg,250,American,3.5
+Thai Cafe,Downtown,East,Both,280,Thai,3.7
+Spice Cafe,Midtown,North,Both,300,Indian,3.8
+Rice Cafe,Uptown,West,Both,240,Asian,3.6
+Meat Cafe,Downtown,West,Non-Veg,390,American,3.7
+Dumpling Spot,Midtown,South,Both,240,Chinese,3.6
+Sushi Spot,Uptown,North,Both,410,Japanese,4.0
+Veg Spot,Downtown,North,Veg,230,Continental,3.6
+Kebab Spot,Midtown,East,Both,280,Middle Eastern,3.4
+Pasta Spot,Uptown,South,Veg,290,Italian,3.7
+Chicken Spot,Downtown,South,Non-Veg,240,American,3.4
+Thai Spot,Midtown,West,Both,270,Thai,3.6
+Spice Spot,Uptown,East,Both,290,Indian,3.7
+Rice Spot,Downtown,East,Both,230,Asian,3.5
+Meat Spot,Midtown,North,Non-Veg,380,American,3.6
+Dumpling King,Uptown,West,Both,230,Chinese,3.5
+Sushi King,Downtown,West,Both,400,Japanese,3.9
+Veg King,Midtown,South,Veg,220,Continental,3.5
+Kebab King,Uptown,North,Both,270,Middle Eastern,3.3
+Pasta King,Downtown,North,Veg,280,Italian,3.6
+Chicken King,Midtown,East,Non-Veg,230,American,3.3
+Thai King,Uptown,South,Both,260,Thai,3.5
+Spice King,Downtown,South,Both,280,Indian,3.6
+Rice King,Midtown,West,Both,220,Asian,3.4
+Meat King,Uptown,East,Non-Veg,370,American,3.5
+Dumpling Palace,Downtown,East,Both,220,Chinese,3.4
+Sushi Palace,Midtown,North,Both,390,Japanese,3.8
+Veg Palace,Uptown,West,Veg,210,Continental,3.4
+Kebab Palace,Downtown,West,Both,260,Middle Eastern,3.2
+Pasta Palace,Midtown,South,Veg,270,Italian,3.5
+Chicken Palace,Uptown,North,Non-Veg,220,American,3.2
+Thai Palace,Downtown,North,Both,250,Thai,3.4
+Spice Palace,Midtown,East,Both,270,Indian,3.5
+Rice Palace,Uptown,South,Both,210,Asian,3.3
+Meat Palace,Downtown,South,Non-Veg,360,American,3.4
+Dumpling Garden,Midtown,West,Both,210,Chinese,3.3
+Sushi Garden,Uptown,East,Both,380,Japanese,3.7
+Veg Garden,Downtown,East,Veg,200,Continental,3.3
+Kebab Garden,Midtown,North,Both,250,Middle Eastern,3.1
+Pasta Garden,Uptown,West,Veg,260,Italian,3.4
+Chicken Garden,Downtown,West,Non-Veg,210,American,3.1
+Thai Garden,Midtown,South,Both,240,Thai,3.3
+Spice Garden,Uptown,North,Both,260,Indian,3.4
+Rice Garden,Downtown,North,Both,200,Asian,3.2
+Meat Garden,Midtown,East,Non-Veg,350,American,3.3
+Dumpling Court,Uptown,South,Both,200,Chinese,3.2
+Sushi Court,Downtown,South,Both,370,Japanese,3.6
+Veg Court,Midtown,West,Veg,190,Continental,3.2
+Kebab Court,Uptown,East,Both,240,Middle Eastern,3.0
+Pasta Court,Downtown,East,Veg,250,Italian,3.3
+Chicken Court,Midtown,North,Non-Veg,200,American,3.0
+Thai Court,Uptown,West,Both,230,Thai,3.2
+Spice Court,Downtown,West,Both,250,Indian,3.3
+Rice Court,Midtown,South,Both,190,Asian,3.1
+Meat Court,Uptown,North,Non-Veg,340,American,3.2
+Dumpling Inn,Downtown,North,Both,190,Chinese,3.1
+Sushi Inn,Midtown,East,Both,360,Japanese,3.5
+Veg Inn,Uptown,South,Veg,180,Continental,3.1
+Kebab Inn,Downtown,South,Both,230,Middle Eastern,2.9
+Pasta Inn,Midtown,West,Veg,240,Italian,3.2
+Chicken Inn,Uptown,East,Non-Veg,190,American,2.9
+Thai Inn,Downtown,East,Both,220,Thai,3.1
+Spice Inn,Midtown,North,Both,240,Indian,3.2
+Rice Inn,Uptown,West,Both,180,Asian,3.0
+Meat Inn,Downtown,West,Non-Veg,330,American,3.1
+Dumpling Bar,Midtown,South,Both,180,Chinese,3.0
+Sushi Bar,Uptown,North,Both,350,Japanese,3.4
+Veg Bar,Downtown,North,Veg,170,Continental,3.0
+Kebab Bar,Midtown,East,Both,220,Middle Eastern,2.8
+Pasta Bar,Uptown,South,Veg,230,Italian,3.1
+Chicken Bar,Downtown,South,Non-Veg,180,American,2.8
+Thai Bar,Midtown,West,Both,210,Thai,3.0
+Spice Bar,Uptown,East,Both,230,Indian,3.1
+Rice Bar,Downtown,East,Both,170,Asian,2.9
+Meat Bar,Midtown,North,Non-Veg,320,American,3.0
+Dumpling Lounge,Uptown,West,Both,170,Chinese,2.9
+Sushi Lounge,Downtown,West,Both,340,Japanese,3.3
+Veg Lounge,Midtown,South,Veg,160,Continental,2.9
+Kebab Lounge,Uptown,North,Both,210,Middle Eastern,2.7
+Pasta Lounge,Downtown,North,Veg,220,Italian,3.0
+Chicken Lounge,Midtown,East,Non-Veg,170,American,2.7
+Thai Lounge,Uptown,South,Both,200,Thai,2.9
+Spice Lounge,Downtown,South,Both,220,Indian,3.0
+Rice Lounge,Midtown,West,Both,160,Asian,2.8
+Meat Lounge,Uptown,East,Non-Veg,310,American,2.9
+Dumpling Tavern,Downtown,East,Both,160,Chinese,2.8
+Sushi Tavern,Midtown,North,Both,330,Japanese,3.2
+Veg Tavern,Uptown,West,Veg,150,Continental,2.8
+Kebab Tavern,Downtown,West,Both,200,Middle Eastern,2.6
+Pasta Tavern,Midtown,South,Veg,210,Italian,2.9
+Chicken Tavern,Uptown,North,Non-Veg,160,American,2.6
+Thai Tavern,Downtown,North,Both,190,Thai,2.8
+Spice Tavern,Midtown,East,Both,210,Indian,2.9
+Rice Tavern,Uptown,South,Both,150,Asian,2.7
+Meat Tavern,Downtown,South,Non-Veg,300,American,2.8
+Dumpling Cafe King,Midtown,West,Both,150,Chinese,2.7
+Sushi Cafe King,Uptown,East,Both,320,Japanese,3.1
+Veg Cafe King,Downtown,East,Veg,140,Continental,2.7
+Kebab Cafe King,Midtown,North,Both,190,Middle Eastern,2.5
+Pasta Cafe King,Uptown,West,Veg,200,Italian,2.8
+Chicken Cafe King,Downtown,West,Non-Veg,150,American,2.5
+Thai Cafe King,Midtown,South,Both,180,Thai,2.7
+Spice Cafe King,Uptown,North,Both,200,Indian,2.8
+Rice Cafe King,Downtown,North,Both,140,Asian,2.6
+Meat Cafe King,Midtown,East,Non-Veg,290,American,2.7
+Dumpling House King,Uptown,South,Both,140,Chinese,2.6
+Sushi House King,Downtown,South,Both,310,Japanese,3.0
+Veg House King,Midtown,West,Veg,130,Continental,2.6
+Kebab House King,Uptown,East,Both,180,Middle Eastern,2.4
+Pasta House King,Downtown,East,Veg,190,Italian,2.7
+Chicken House King,Midtown,North,Non-Veg,140,American,2.4
+Thai House King,Uptown,West,Both,170,Thai,2.6
+Spice House King,Downtown,West,Both,190,Indian,2.7
+Rice House King,Midtown,South,Both,130,Asian,2.5
+Meat House King,Uptown,North,Non-Veg,280,American,2.6
+Dumpling Express King,Downtown,North,Both,130,Chinese,2.5
+Sushi Express King,Midtown,East,Both,300,Japanese,2.9
+Veg Express King,Uptown,South,Veg,120,Continental,2.5
+Kebab Express King,Downtown,South,Both,170,Middle Eastern,2.3
+Pasta Express King,Midtown,West,Veg,180,Italian,2.6
+Chicken Express King,Uptown,East,Non-Veg,130,American,2.3
+Thai Express King,Downtown,East,Both,160,Thai,2.5
+Spice Express King,Midtown,North,Both,180,Indian,2.6
+Rice Express King,Uptown,West,Both,120,Asian,2.4
+Meat Express King,Downtown,West,Non-Veg,270,American,2.5
+Dumpling Spot King,Midtown,South,Both,120,Chinese,2.4
+Sushi Spot King,Uptown,North,Both,290,Japanese,2.8
+Veg Spot King,Downtown,North,Veg,110,Continental,2.4
+Kebab Spot King,Midtown,East,Both,160,Middle Eastern,2.2
+Pasta Spot King,Uptown,South,Veg,170,Italian,2.5
+Chicken Spot King,Downtown,South,Non-Veg,120,American,2.2
+Thai Spot King,Midtown,West,Both,150,Thai,2.4
+Spice Spot King,Uptown,East,Both,170,Indian,2.5
+Rice Spot King,Downtown,East,Both,110,Asian,2.3
+Meat Spot King,Midtown,North,Non-Veg,260,American,2.4
