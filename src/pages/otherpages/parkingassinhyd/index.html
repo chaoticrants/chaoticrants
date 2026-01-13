@@ -61,7 +61,7 @@
     const map = L.map('map').setView([17.49, 78.38], 16);
     const benchIcon = L.icon({
       //iconUrl: 'bench-com.svg',
-      iconUrl: '../../src/assets/images/benches01.png',
+      iconUrl: '/src/assets/images/benches01.png',
       iconSize: [34, 36],        // adjust as needed
       iconAnchor: [16, 16],      // center the icon
       popupAnchor: [0, -16]      // popup above icon
@@ -83,7 +83,7 @@
     //   .addTo(map)
     //   .bindPopup('<b>Hyderabad</b><br>This is a marker.')
     //   .openPopup();
-    fetch('../../src/assets/geo-jsons/map.geojson')
+    fetch('/src/assets/geo-jsons/map.geojson')
       .then(response => response.json())
       .then(data => {
       console.log({data})

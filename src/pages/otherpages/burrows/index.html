@@ -295,7 +295,7 @@
         });
 
         function autoLoadCSV() {
-            fetch('../../src/assets/csv/restaurants.csv')
+            fetch('/src/assets/csv/restaurants.csv')
                 .then(response => response.text())
                 .then(csv => {
                     document.getElementById('fileName').textContent = 'restaurants.csv (Auto-loaded)';
